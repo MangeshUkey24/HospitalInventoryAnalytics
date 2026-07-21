@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual Environment
+.venv/
+venv/
+
+# Logs
+Logs/
+*.log
+
+# Output
+Output/
+
+# Temporary
+Temp/
+
+# Archives
+*.zip
+*.rar
+*.7z
+
+# VS Code
+.vscode/
+
+# Python build files
+build/
+dist/
+*.spec
+
+# SQLite
+Database/*.db
