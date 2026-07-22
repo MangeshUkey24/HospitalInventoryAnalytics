@@ -186,45 +186,49 @@ class ReportGenerator:
 
         return filename
 
-    # --------------------------------------------------------
-    # Generate All Reports
-    # --------------------------------------------------------
+       # --------------------------------------------------------
+      # Generate All Reports
+      # --------------------------------------------------------
     def generate(
-
-            self,
-
-            daily,
-
-            weekly,
-
-            monthly,
-
-            ledger,
-
-            negative,
-
-            zero,
-
-            slow,
-
-            summary
-
+        self,
+        daily,
+        weekly,
+        monthly,
+        ledger,
+        negative,
+        zero,
+        slow,
+        summary
     ):
 
+        print("Creating Daily Stock...")
         self.add_sheet("Daily Stock", daily)
 
+        print("Creating Weekly Stock...")
         self.add_sheet("Weekly Stock", weekly)
 
+        print("Creating Monthly Stock...")
         self.add_sheet("Monthly Stock", monthly)
 
+        print("Creating Item Ledger...")
         self.add_sheet("Item Ledger", ledger)
 
+        print("Creating Negative Stock...")
         self.add_sheet("Negative Stock", negative)
 
+        print("Creating Zero Stock...")
         self.add_sheet("Zero Stock", zero)
 
+        print("Creating Slow Moving...")
         self.add_sheet("Slow Moving", slow)
 
+        print("Creating Summary...")
         self.add_summary(summary)
 
-        return self.save()
+        print("Saving Excel...")
+
+        filename = self.save()
+
+        print(f"Excel Saved Successfully: {filename}")
+
+        return filename

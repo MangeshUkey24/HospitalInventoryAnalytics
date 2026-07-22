@@ -35,7 +35,6 @@ class ExcelReader:
         self.logger.info(f"Reading {file_path.name}")
 
         try:
-
             df = pd.read_excel(file_path)
 
         except Exception as e:
@@ -45,6 +44,10 @@ class ExcelReader:
         df = self.clean_dataframe(df)
 
         df = self.config.standardize_columns(df)
+ 
+        print(f"\nFile: {file_path.name}")
+        print(df.columns.tolist())
+
 
         df = self.prepare_dataframe(df)
 
@@ -80,15 +83,16 @@ class ExcelReader:
 
         # Date
         if "date" in df.columns:
-
             df["date"] = pd.to_datetime(
                 df["date"],
                 errors="coerce"
             )
 
         # Quantity
-        if "qty" in df.columns:
+        if "quantity" in df.columns:
+            df.rename(columns={"quantity": "qty"}, inplace=True)
 
+        if "qty" in df.columns:
             df["qty"] = pd.to_numeric(
                 df["qty"],
                 errors="coerce"
@@ -96,7 +100,6 @@ class ExcelReader:
 
         # MRP
         if "mrp" in df.columns:
-
             df["mrp"] = pd.to_numeric(
                 df["mrp"],
                 errors="coerce"
@@ -104,7 +107,6 @@ class ExcelReader:
 
         # EPR
         if "epr" in df.columns:
-
             df["epr"] = pd.to_numeric(
                 df["epr"],
                 errors="coerce"
@@ -112,7 +114,6 @@ class ExcelReader:
 
         # Item Name
         if "item_name" in df.columns:
-
             df["item_name"] = (
                 df["item_name"]
                 .astype(str)
@@ -224,31 +225,43 @@ class ExcelReader:
 
         return df
 
-    # --------------------------------------------------------
+     # --------------------------------------------------------
     # Adjustment
     # --------------------------------------------------------
     def read_adjustment(self, path):
 
-        df = self.read_excel(path)
+        self.logger.info(f"Reading {Path(path).name}")
+
+        df = pd.read_excel(path, header=1)
+
+        df = self.clean_dataframe(df)
+        df = self.config.standardize_columns(df)
+
+        # Create qty from Stock Up / Stock Down
+        if "STOCK UP" in df.columns and "STOCK DOWN" in df.columns:
+
+            df["qty"] = (
+                pd.to_numeric(df["STOCK UP"], errors="coerce").fillna(0)
+                -
+                pd.to_numeric(df["STOCK DOWN"], errors="coerce").fillna(0)
+            )
+
+        df = self.prepare_dataframe(df)
+
+        print(f"\nFile: {Path(path).name}")
+        print(df.columns.tolist())
 
         self.validate_columns(
-
             df,
-
             [
-
                 "date",
-
                 "item_name",
-
                 "qty"
-
             ]
-
         )
 
         return df
-
+        raise Exception("Header inspection completed")
     # --------------------------------------------------------
     # Read All Files
     # --------------------------------------------------------

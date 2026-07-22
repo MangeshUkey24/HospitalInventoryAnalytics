@@ -3,3 +3,162 @@
 2026-07-22 01:29:35,063 | INFO | ========================================
 2026-07-22 01:29:35,063 | INFO | Launching GUI...
 2026-07-22 02:11:56,826 | INFO | Application Closed
+2026-07-22 03:07:07,349 | INFO | ========================================
+2026-07-22 03:07:07,349 | INFO | Hospital Inventory Analytics Started
+2026-07-22 03:07:07,349 | INFO | ========================================
+2026-07-22 03:07:07,352 | INFO | Launching GUI...
+2026-07-22 03:13:40,905 | INFO | Application Closed
+2026-07-22 12:33:09,333 | INFO | ========================================
+2026-07-22 12:33:09,333 | INFO | Hospital Inventory Analytics Started
+2026-07-22 12:33:09,333 | INFO | ========================================
+2026-07-22 12:33:09,333 | INFO | Launching GUI...
+2026-07-22 12:36:54,322 | INFO | Application Closed
+2026-07-22 15:49:30,679 | INFO | ========================================
+2026-07-22 15:49:30,679 | INFO | Hospital Inventory Analytics Started
+2026-07-22 15:49:30,679 | INFO | ========================================
+2026-07-22 15:49:30,679 | INFO | Launching GUI...
+2026-07-22 15:55:07,827 | WARNING | Application interrupted by user.
+2026-07-22 16:29:12,051 | INFO | ========================================
+2026-07-22 16:29:12,051 | INFO | Hospital Inventory Analytics Started
+2026-07-22 16:29:12,051 | INFO | ========================================
+2026-07-22 16:29:12,051 | INFO | Launching GUI...
+2026-07-22 16:30:25,131 | WARNING | Application interrupted by user.
+2026-07-22 16:34:30,654 | INFO | ========================================
+2026-07-22 16:34:30,654 | INFO | Hospital Inventory Analytics Started
+2026-07-22 16:34:30,654 | INFO | ========================================
+2026-07-22 16:34:30,655 | INFO | Launching GUI...
+2026-07-22 16:53:16,878 | INFO | Application Closed
+2026-07-22 16:53:33,328 | INFO | ========================================
+2026-07-22 16:53:33,328 | INFO | Hospital Inventory Analytics Started
+2026-07-22 16:53:33,328 | INFO | ========================================
+2026-07-22 16:53:33,328 | INFO | Launching GUI...
+2026-07-22 17:07:50,921 | INFO | Application Closed
+2026-07-22 17:08:08,524 | INFO | ========================================
+2026-07-22 17:08:08,524 | INFO | Hospital Inventory Analytics Started
+2026-07-22 17:08:08,524 | INFO | ========================================
+2026-07-22 17:08:08,524 | INFO | Launching GUI...
+2026-07-22 17:45:50,398 | WARNING | Application interrupted by user.
+2026-07-22 17:48:20,802 | INFO | ========================================
+2026-07-22 17:48:20,802 | INFO | Hospital Inventory Analytics Started
+2026-07-22 17:48:20,802 | INFO | ========================================
+2026-07-22 17:48:20,802 | INFO | Launching GUI...
+2026-07-22 17:49:29,065 | INFO | Configuration Loaded Successfully
+22-07-2026 17:49:29 | INFO     | excel_reader.py:35 | Reading Opening Stock Report.xlsx
+22-07-2026 17:49:29 | INFO     | excel_reader.py:51 | Opening Stock Report.xlsx : 336 rows imported
+2026-07-22 17:54:15,710 | INFO | Configuration Loaded Successfully
+22-07-2026 17:54:15 | INFO     | excel_reader.py:35 | Reading Opening Stock Report.xlsx
+22-07-2026 17:54:15 | INFO     | excel_reader.py:51 | Opening Stock Report.xlsx : 336 rows imported
+2026-07-22 17:54:45,604 | INFO | Configuration Loaded Successfully
+22-07-2026 17:54:45 | INFO     | excel_reader.py:35 | Reading Opening Stock Report.xlsx
+22-07-2026 17:54:45 | INFO     | excel_reader.py:51 | Opening Stock Report.xlsx : 336 rows imported
+2026-07-22 17:56:18,432 | INFO | Application Closed
+2026-07-22 17:56:26,440 | INFO | ========================================
+2026-07-22 17:56:26,440 | INFO | Hospital Inventory Analytics Started
+2026-07-22 17:56:26,440 | INFO | ========================================
+2026-07-22 17:56:26,440 | INFO | Launching GUI...
+2026-07-22 17:57:18,147 | INFO | Configuration Loaded Successfully
+22-07-2026 17:57:18 | INFO     | excel_reader.py:35 | Reading Opening Stock Report.xlsx
+22-07-2026 17:57:18 | INFO     | excel_reader.py:51 | Opening Stock Report.xlsx : 336 rows imported
+2026-07-22 17:58:50,185 | WARNING | Application interrupted by user.
+2026-07-22 18:12:28,783 | INFO | ========================================
+2026-07-22 18:12:28,783 | INFO | Hospital Inventory Analytics Started
+2026-07-22 18:12:28,783 | INFO | ========================================
+2026-07-22 18:12:28,784 | INFO | Launching GUI...
+2026-07-22 18:13:28,309 | INFO | Configuration Loaded Successfully
+22-07-2026 18:13:28 | INFO     | excel_reader.py:35 | Reading Opening Stock Report.xlsx
+22-07-2026 18:13:28 | INFO     | excel_reader.py:53 | Opening Stock Report.xlsx : 336 rows imported
+2026-07-22 18:17:39,838 | INFO | Configuration Loaded Successfully
+22-07-2026 18:17:39 | INFO     | excel_reader.py:35 | Reading Opening Stock Report.xlsx
+22-07-2026 18:17:39 | INFO     | excel_reader.py:53 | Opening Stock Report.xlsx : 336 rows imported
+2026-07-22 18:17:51,010 | WARNING | Application interrupted by user.
+2026-07-22 19:49:22,890 | INFO | ========================================
+2026-07-22 19:49:22,891 | INFO | Hospital Inventory Analytics Started
+2026-07-22 19:49:22,891 | INFO | ========================================
+2026-07-22 19:49:22,891 | INFO | Launching GUI...
+22-07-2026 19:50:32 | INFO     | excel_reader.py:35 | Reading Opening Stock Report.xlsx
+22-07-2026 19:50:32 | INFO     | excel_reader.py:52 | Opening Stock Report.xlsx : 336 rows imported
+2026-07-22 20:29:15,037 | WARNING | Application interrupted by user.
+2026-07-22 20:32:46,482 | INFO | ========================================
+2026-07-22 20:32:46,482 | INFO | Hospital Inventory Analytics Started
+2026-07-22 20:32:46,482 | INFO | ========================================
+2026-07-22 20:32:46,482 | INFO | Launching GUI...
+22-07-2026 20:34:26 | INFO     | excel_reader.py:35 | Reading Opening Stock Report.xlsx
+22-07-2026 20:34:26 | INFO     | excel_reader.py:54 | Opening Stock Report.xlsx : 336 rows imported
+2026-07-22 20:37:27,123 | WARNING | Application interrupted by user.
+2026-07-22 20:37:33,075 | INFO | ========================================
+2026-07-22 20:37:33,075 | INFO | Hospital Inventory Analytics Started
+2026-07-22 20:37:33,075 | INFO | ========================================
+2026-07-22 20:37:33,075 | INFO | Launching GUI...
+2026-07-22 20:41:26,513 | WARNING | Application interrupted by user.
+2026-07-22 20:41:29,624 | INFO | ========================================
+2026-07-22 20:41:29,624 | INFO | Hospital Inventory Analytics Started
+2026-07-22 20:41:29,624 | INFO | ========================================
+2026-07-22 20:41:29,624 | INFO | Launching GUI...
+22-07-2026 20:42:21 | INFO     | excel_reader.py:35 | Reading Opening Stock Report.xlsx
+22-07-2026 20:42:21 | INFO     | excel_reader.py:54 | Opening Stock Report.xlsx : 336 rows imported
+22-07-2026 20:42:21 | INFO     | excel_reader.py:35 | Reading Purchase Report.xlsx
+22-07-2026 20:42:21 | INFO     | excel_reader.py:54 | Purchase Report.xlsx : 272 rows imported
+2026-07-22 20:44:39,562 | WARNING | Application interrupted by user.
+2026-07-22 20:44:42,623 | INFO | ========================================
+2026-07-22 20:44:42,623 | INFO | Hospital Inventory Analytics Started
+2026-07-22 20:44:42,623 | INFO | ========================================
+2026-07-22 20:44:42,623 | INFO | Launching GUI...
+22-07-2026 20:45:59 | INFO     | excel_reader.py:35 | Reading Opening Stock Report.xlsx
+22-07-2026 20:45:59 | INFO     | excel_reader.py:54 | Opening Stock Report.xlsx : 336 rows imported
+22-07-2026 20:45:59 | INFO     | excel_reader.py:35 | Reading Purchase Report.xlsx
+22-07-2026 20:45:59 | INFO     | excel_reader.py:54 | Purchase Report.xlsx : 272 rows imported
+22-07-2026 20:45:59 | INFO     | excel_reader.py:35 | Reading Patient wise Sales Report.xlsx
+22-07-2026 20:46:02 | INFO     | excel_reader.py:54 | Patient wise Sales Report.xlsx : 14666 rows imported
+22-07-2026 20:46:02 | INFO     | excel_reader.py:35 | Reading Stock Adjustment Report.xlsx
+22-07-2026 20:46:02 | INFO     | excel_reader.py:54 | Stock Adjustment Report.xlsx : 10 rows imported
+2026-07-22 20:51:41,436 | WARNING | Application interrupted by user.
+2026-07-22 20:54:03,908 | INFO | ========================================
+2026-07-22 20:54:03,908 | INFO | Hospital Inventory Analytics Started
+2026-07-22 20:54:03,908 | INFO | ========================================
+2026-07-22 20:54:03,924 | INFO | Launching GUI...
+22-07-2026 20:54:59 | INFO     | excel_reader.py:35 | Reading Opening Stock Report.xlsx
+22-07-2026 20:54:59 | INFO     | excel_reader.py:54 | Opening Stock Report.xlsx : 336 rows imported
+22-07-2026 20:54:59 | INFO     | excel_reader.py:35 | Reading Purchase Report.xlsx
+22-07-2026 20:54:59 | INFO     | excel_reader.py:54 | Purchase Report.xlsx : 272 rows imported
+22-07-2026 20:54:59 | INFO     | excel_reader.py:35 | Reading Patient wise Sales Report.xlsx
+22-07-2026 20:55:02 | INFO     | excel_reader.py:54 | Patient wise Sales Report.xlsx : 14666 rows imported
+22-07-2026 20:55:02 | INFO     | excel_reader.py:236 | Reading Stock Adjustment Report.xlsx
+2026-07-22 21:04:03,764 | WARNING | Application interrupted by user.
+2026-07-22 21:04:06,889 | INFO | ========================================
+2026-07-22 21:04:06,889 | INFO | Hospital Inventory Analytics Started
+2026-07-22 21:04:06,889 | INFO | ========================================
+2026-07-22 21:04:06,889 | INFO | Launching GUI...
+22-07-2026 21:04:52 | INFO     | excel_reader.py:35 | Reading Opening Stock Report.xlsx
+22-07-2026 21:04:52 | INFO     | excel_reader.py:54 | Opening Stock Report.xlsx : 336 rows imported
+22-07-2026 21:04:52 | INFO     | excel_reader.py:35 | Reading Purchase Report.xlsx
+22-07-2026 21:04:52 | INFO     | excel_reader.py:54 | Purchase Report.xlsx : 272 rows imported
+22-07-2026 21:04:52 | INFO     | excel_reader.py:35 | Reading Patient wise Sales Report.xlsx
+22-07-2026 21:04:55 | INFO     | excel_reader.py:54 | Patient wise Sales Report.xlsx : 14666 rows imported
+22-07-2026 21:04:55 | INFO     | excel_reader.py:233 | Reading Stock Adjustment Report.xlsx
+2026-07-22 21:11:29,919 | WARNING | Application interrupted by user.
+2026-07-22 21:11:32,546 | INFO | ========================================
+2026-07-22 21:11:32,546 | INFO | Hospital Inventory Analytics Started
+2026-07-22 21:11:32,546 | INFO | ========================================
+2026-07-22 21:11:32,546 | INFO | Launching GUI...
+22-07-2026 21:12:16 | INFO     | excel_reader.py:35 | Reading Opening Stock Report.xlsx
+22-07-2026 21:12:16 | INFO     | excel_reader.py:54 | Opening Stock Report.xlsx : 336 rows imported
+22-07-2026 21:12:16 | INFO     | excel_reader.py:35 | Reading Purchase Report.xlsx
+22-07-2026 21:12:16 | INFO     | excel_reader.py:54 | Purchase Report.xlsx : 272 rows imported
+22-07-2026 21:12:16 | INFO     | excel_reader.py:35 | Reading Patient wise Sales Report.xlsx
+22-07-2026 21:12:19 | INFO     | excel_reader.py:54 | Patient wise Sales Report.xlsx : 14666 rows imported
+22-07-2026 21:12:19 | INFO     | excel_reader.py:233 | Reading Stock Adjustment Report.xlsx
+2026-07-22 21:14:08,077 | WARNING | Application interrupted by user.
+2026-07-22 21:14:11,061 | INFO | ========================================
+2026-07-22 21:14:11,061 | INFO | Hospital Inventory Analytics Started
+2026-07-22 21:14:11,061 | INFO | ========================================
+2026-07-22 21:14:11,061 | INFO | Launching GUI...
+22-07-2026 21:15:09 | INFO     | excel_reader.py:35 | Reading Opening Stock Report.xlsx
+22-07-2026 21:15:09 | INFO     | excel_reader.py:54 | Opening Stock Report.xlsx : 336 rows imported
+22-07-2026 21:15:09 | INFO     | excel_reader.py:35 | Reading Purchase Report.xlsx
+22-07-2026 21:15:09 | INFO     | excel_reader.py:54 | Purchase Report.xlsx : 272 rows imported
+22-07-2026 21:15:09 | INFO     | excel_reader.py:35 | Reading Patient wise Sales Report.xlsx
+22-07-2026 21:15:12 | INFO     | excel_reader.py:54 | Patient wise Sales Report.xlsx : 14666 rows imported
+22-07-2026 21:15:12 | INFO     | excel_reader.py:233 | Reading Stock Adjustment Report.xlsx
+2026-07-22 21:15:16,560 | INFO | Daily Stock Report Generated
+2026-07-22 21:15:17,374 | INFO | Weekly Stock Report Generated
+2026-07-22 21:15:17,467 | INFO | Monthly Stock Report Generated

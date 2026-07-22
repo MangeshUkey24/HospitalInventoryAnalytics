@@ -11,7 +11,6 @@ Version : 1.0
 import pandas as pd
 import logging
 
-
 class StockEngine:
 
     def __init__(self,
@@ -24,6 +23,9 @@ class StockEngine:
         self.purchase = purchase_df.copy()
         self.sales = sales_df.copy()
         self.adjustment = adjustment_df.copy()
+
+        # Cache for generated reports
+        self._daily_stock = None
 
     # --------------------------------------------------------
     # Standardize Data
@@ -66,6 +68,10 @@ class StockEngine:
     # Daily Stock Report
     # --------------------------------------------------------
     def daily_stock(self):
+
+        # Return cached report if already generated
+        if self._daily_stock is not None:
+            return self._daily_stock
 
         self.prepare()
 
@@ -174,11 +180,9 @@ class StockEngine:
 
                     "EPR": epr_dict.get(item, 0),
 
-                    "MRP Value":
-                        closing_qty * mrp_dict.get(item, 0),
+                    "MRP Value": closing_qty * mrp_dict.get(item, 0),
 
-                    "EPR Value":
-                        closing_qty * epr_dict.get(item, 0)
+                    "EPR Value": closing_qty * epr_dict.get(item, 0)
 
                 })
 
@@ -186,10 +190,12 @@ class StockEngine:
 
         df = pd.DataFrame(report)
 
+        # Store report in cache
+        self._daily_stock = df
+
         logging.info("Daily Stock Report Generated")
 
-        return df
-
+        return self._daily_stock
     # --------------------------------------------------------
     # Weekly Report
     # --------------------------------------------------------

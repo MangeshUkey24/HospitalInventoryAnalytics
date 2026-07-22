@@ -9,6 +9,9 @@ import os
 import customtkinter as ctk
 from tkinter import filedialog, messagebox
 
+from excel_reader import ExcelReader
+from stock_engine import StockEngine
+from report_generator import ReportGenerator
 
 class HospitalInventoryApp(ctk.CTk):
 
@@ -256,7 +259,6 @@ class HospitalInventoryApp(ctk.CTk):
                 return False
 
         return True
-
     # --------------------------------------------------
     # Generate Reports
     # --------------------------------------------------
@@ -269,37 +271,74 @@ class HospitalInventoryApp(ctk.CTk):
             )
             return
 
-        self.progress.set(0.10)
-        self.status.configure(text="Reading Excel Files...")
-        self.log("Reading Opening Stock...")
-        self.update()
+        try:
+            self.progress.set(0.10)
+            self.status.configure(text="Reading Excel Files...")
+            self.log("Reading Excel Files...")
+            self.update()
 
-        # TODO:
-        # from excel_reader import read_all_files
-        # from stock_engine import calculate_stock
-        # from report_generator import generate_reports
+            reader = ExcelReader()
 
-        self.progress.set(0.35)
-        self.log("Reading Purchase Report...")
-        self.update()
+            data = reader.read_all(
+                self.opening_stock.get(),
+                self.purchase_report.get(),
+                self.sales_report.get(),
+                self.adjustment_report.get()
+            )
 
-        self.progress.set(0.55)
-        self.log("Reading Sales Report...")
-        self.update()
+            self.progress.set(0.30)
+            self.log("Excel Files Loaded")
+            self.update()
 
-        self.progress.set(0.75)
-        self.log("Reading Adjustment Report...")
-        self.update()
+            engine = StockEngine(
+                data["opening"],
+                data["purchase"],
+                data["sales"],
+                data["adjustment"]
+            )
 
-        self.progress.set(0.90)
-        self.log("Generating Excel Reports...")
-        self.update()
+            self.progress.set(0.50)
+            self.log("Calculating Reports...")
+            self.update()
 
-        self.progress.set(1.0)
-        self.status.configure(text="Completed")
-        self.log("Reports Generated Successfully.")
+            daily = engine.daily_stock()
+            weekly = engine.weekly_stock()
+            monthly = engine.monthly_stock()
+            ledger = engine.item_ledger()
+            negative = engine.negative_stock()
+            zero = engine.zero_stock()
+            slow = engine.slow_moving()
+            summary = engine.summary()
 
-        messagebox.showinfo(
-            "Success",
-            "Reports generated successfully."
-        )
+            self.progress.set(0.80)
+            self.log("Generating Excel Workbook...")
+            self.update()
+
+            report = ReportGenerator(self.output_folder.get())
+
+            output_file = report.generate(
+                daily,
+                weekly,
+                monthly,
+                ledger,
+                negative,
+                zero,
+                slow,
+                summary
+            )
+
+            self.progress.set(1.0)
+            self.status.configure(text="Completed")
+            self.log(f"Report Saved: {output_file}")
+
+            messagebox.showinfo(
+                "Success",
+                f"Report Generated Successfully.\n\n{output_file}"
+            )
+
+        except Exception as e:
+            self.progress.set(0)
+            self.status.configure(text="Error")
+            self.log(f"ERROR: {str(e)}")
+            messagebox.showerror("Error", str(e))
+            raise

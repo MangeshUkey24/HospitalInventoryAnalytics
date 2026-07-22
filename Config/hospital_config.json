@@ -1,7 +1,7 @@
 {
     "application": {
         "name": "Hospital Inventory Analytics System",
-        "version": "1.0",
+        "version": "2.0",
         "author": "Mangesh Ukey"
     },
 
@@ -10,43 +10,57 @@
         "weekly": true,
         "monthly": true,
         "ledger": true,
-        "dashboard": true
+        "negative_stock": true,
+        "zero_stock": true,
+        "slow_moving": true,
+        "summary": true
     },
 
     "column_mapping": {
 
         "item_name": [
             "Item Name",
-            "ITEM_NAME",
+            "ITEM NAME",
             "Medicine Name",
             "Product Name",
-            "ITEM"
+            "ITEM",
+            "Item"
         ],
 
-        "quantity": [
+        "qty": [
             "Qty",
+            "QTY",
             "Quantity",
+            "quantity",
             "Stock Qty",
-            "QTY"
+            "Stock Quantity",
+            "Current Stock",
+            "Closing Stock",
+            "Opening Stock",
+            "Stock"
         ],
 
         "date": [
             "Date",
             "Txn Date",
+            "Transaction Date",
             "Bill Date",
             "Purchase Date",
-            "Sale Date"
+            "Sale Date",
+            "GRN DATE"
         ],
 
         "mrp": [
             "MRP",
-            "Selling Rate"
+            "Selling Rate",
+            "MRP Rate"
         ],
 
         "epr": [
             "EPR",
             "Purchase Rate",
-            "Cost Price"
+            "Cost Price",
+            "Purchase Price"
         ],
 
         "batch": [
@@ -58,6 +72,7 @@
         "expiry": [
             "Expiry",
             "Expiry Date",
+            "Expiry Dt",
             "EXP Date"
         ]
     }

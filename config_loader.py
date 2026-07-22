@@ -10,118 +10,40 @@ Version : 1.0
 
 import json
 import os
-import logging
 
 
 class ConfigLoader:
+    def __init__(self, config_path="Config/hospital_config.json"):
+        self.config_path = config_path
+        self.config = self.load_config()
 
-    def __init__(self,
-                 config_file="Config/hospital_config.json"):
+    def load_config(self):
+        if not os.path.exists(self.config_path):
+            raise FileNotFoundError(
+                f"Configuration file not found: {self.config_path}"
+            )
 
-        self.config_file = config_file
+        with open(self.config_path, "r", encoding="utf-8") as f:
+            return json.load(f)
 
-        self.config = {}
-
-        self.load()
-
-    # --------------------------------------------------------
-    # Load JSON Configuration
-    # --------------------------------------------------------
-    def load(self):
-
-        try:
-
-            if not os.path.exists(self.config_file):
-
-                raise FileNotFoundError(
-                    f"Configuration file not found : {self.config_file}"
-                )
-
-            with open(
-                self.config_file,
-                "r",
-                encoding="utf-8"
-            ) as file:
-
-                self.config = json.load(file)
-
-            logging.info("Configuration Loaded Successfully")
-
-        except Exception as e:
-
-            logging.exception(e)
-
-            raise
-
-    # --------------------------------------------------------
-    # Get Complete Configuration
-    # --------------------------------------------------------
-    def get_config(self):
-
-        return self.config
-
-    # --------------------------------------------------------
-    # Get Section
-    # --------------------------------------------------------
     def get(self, key, default=None):
-
         return self.config.get(key, default)
 
-    # --------------------------------------------------------
-    # Get Column Mapping
-    # --------------------------------------------------------
-    def get_column_mapping(self):
+    def standardize_columns(self, df):
+        """
+        Rename DataFrame columns using hospital_config.json mappings.
+        """
 
-        return self.config.get("column_mapping", {})
-
-    # --------------------------------------------------------
-    # Get Report Settings
-    # --------------------------------------------------------
-    def get_reports(self):
-
-        return self.config.get("reports", {})
-
-    # --------------------------------------------------------
-    # Find Standard Column Name
-    # --------------------------------------------------------
-    def identify_column(self, actual_column):
-
-        actual_column = actual_column.strip().lower()
-
-        mappings = self.get_column_mapping()
-
-        for standard_name, aliases in mappings.items():
-
-            for alias in aliases:
-
-                if actual_column == alias.lower():
-
-                    return standard_name
-
-        return None
-
-    # --------------------------------------------------------
-    # Convert All Columns
-    # --------------------------------------------------------
-    def standardize_columns(self, dataframe):
+        mapping = self.config.get("column_mapping", {})
 
         rename_dict = {}
 
-        for column in dataframe.columns:
+        for standard_name, aliases in mapping.items():
+            for alias in aliases:
+                for column in df.columns:
+                    if str(column).strip().lower() == str(alias).strip().lower():
+                        rename_dict[column] = standard_name
 
-            standard = self.identify_column(column)
+        df = df.rename(columns=rename_dict)
 
-            if standard:
-
-                rename_dict[column] = standard
-
-        dataframe = dataframe.rename(columns=rename_dict)
-
-        return dataframe
-
-    # --------------------------------------------------------
-    # Print Configuration
-    # --------------------------------------------------------
-    def print_config(self):
-
-        print(json.dumps(self.config, indent=4))
+        return df
