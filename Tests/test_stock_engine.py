@@ -1,32 +1,41 @@
-from excel_reader import ExcelReader
+import pandas as pd
+
 from stock_engine import StockEngine
 
-print("Reading Excel Files...")
 
-reader = ExcelReader()
+def test_stock_modify_transactions_affect_running_balance():
+    opening = pd.DataFrame([
+        {"item_name": "ABC", "qty": 0}
+    ])
 
-data = reader.read_all(
-    opening_file=r"D:\YOUR_PATH\Opening.xlsx",
-    purchase_file=r"D:\YOUR_PATH\Purchase.xlsx",
-    sales_file=r"D:\YOUR_PATH\Sales.xlsx",
-    adjustment_file=r"D:\YOUR_PATH\Adjustment.xlsx"
-)
+    purchase = pd.DataFrame(columns=["date", "item_name", "qty"])
 
-print("Excel Read Successfully")
+    sales = pd.DataFrame([
+        {"date": "2024-01-01", "item_name": "ABC", "qty": 30}
+    ])
 
-engine = StockEngine(
-    data["opening"],
-    data["purchase"],
-    data["sales"],
-    data["adjustment"]
-)
+    adjustment = pd.DataFrame([
+        {"date": "2024-01-01", "item_name": "ABC", "qty": 117}
+    ])
 
-print("Calculating Daily Stock...")
+    stock_modify = pd.DataFrame([
+        {"date": "2024-01-01", "item_name": "ABC", "qty": -87},
+        {"date": "2024-01-01", "item_name": "ABC", "qty": 87},
+    ])
 
-result = engine.daily_stock()
+    engine = StockEngine(
+        opening,
+        purchase,
+        sales,
+        adjustment,
+        stock_modify_df=stock_modify,
+    )
 
-print(result.head())
+    daily = engine.daily_stock()
+    ledger = engine.item_ledger()
 
-print()
+    assert daily.loc[daily["Item Name"] == "ABC", "Closing Qty"].iloc[0] == 87
 
-print(engine.summary())
+    stock_modify_rows = ledger[ledger["Transaction Type"] == "Stock Modify"]
+    assert not stock_modify_rows.empty
+    assert stock_modify_rows["Running Stock"].iloc[-1] == 87
